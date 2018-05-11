@@ -25,7 +25,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([
-      { path: 'home', component: HomeComponent}
+      { path: 'home', component: HomeComponent},
+      { path: 'books', component: BooksComponent},
+      { path: 'characters', component: CharactersComponent},
+      { path: 'houses', component: HousesComponent}
     ],{ useHash: true }),
     HttpClientModule,
 
