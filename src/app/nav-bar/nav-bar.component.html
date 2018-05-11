@@ -9,14 +9,17 @@
     
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
+            <li class="nav-item" [routerLinkActive]="['active']">
+                    <a id="item" [routerLink]="['/home']" class="nav-link waves-light" mdbRippleRadius>Home<span class="sr-only">(current)</span></a>
+                </li>
        <li class="nav-item" [routerLinkActive]="['active']">
-           <a id="item" [routerLink]="['/home']" class="nav-link waves-light" mdbRippleRadius>Books<span class="sr-only">(current)</span></a>
+           <a id="item" [routerLink]="['/books']" class="nav-link waves-light" mdbRippleRadius>Books<span class="sr-only">(current)</span></a>
        </li>
        <li class="nav-item" [routerLinkActive]="['active']">
-           <a id="item" [routerLink]="['/game']" class="nav-link waves-light" mdbRippleRadius>Characters</a>
+           <a id="item" [routerLink]="['/characters']" class="nav-link waves-light" mdbRippleRadius>Characters</a>
        </li>
        <li class="nav-item" [routerLinkActive]="['active']">
-           <a id="item" [routerLink]="['/calc']" class="nav-link waves-light" mdbRippleRadius>Houses</a>
+           <a id="item" [routerLink]="['/houses']" class="nav-link waves-light" mdbRippleRadius>Houses</a>
        </li>
     
     </ul>
