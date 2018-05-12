@@ -5,13 +5,19 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class GotService {
 
-  private url = 'https://anapioficeandfire.com/api'
+  private url = 'https://anapioficeandfire.com/api';
+  Information: IBooksResult;
+
 
   constructor(private http : HttpClient) { }
 
 
   getBooks():Observable<IBooksResult[]>{
     return this.http.get<IBooksResult[]>(this.url + '/books')
+  }
+
+  getBookInformation(url:string): Observable<IBooksResult>{
+    return this.http.get<IBooksResult>(url);
   }
 
   getCharacters():Observable<ICharacResult[]>{
@@ -22,9 +28,8 @@ export class GotService {
     return this.http.get<IHousesResult[]>(this.url + '/houses')
   }
 
-  getHouse(id:number):Observable<IHousesResult[]>{
-    return this.http.get<IHousesResult[]>(this.url + '/houses/${id}');
-  }
+  
+
 
 }
 
@@ -50,7 +55,7 @@ export class GotService {
 
 
   export interface IBooksResult {
-    id: number;
+    id: string;
     url: string;
     name: string;
     isbn: string;
@@ -66,7 +71,7 @@ export class GotService {
 
 
   export interface IHousesResult {
-    id: number;
+    id: string;
     url: string;
     name: string;
     region: string;

@@ -13,7 +13,8 @@ export class HousesComponent implements OnInit {
   constructor(private _svc : GotService) { }
 
   ngOnInit() {
-    this._svc.getHouses().subscribe(result => this.houses = result);
+    this._svc.getHouses().subscribe(result => {this.houses = result; 
+      this.houses.forEach(s=> { s.id = s.url.slice(41)})});
   }
 
 }
