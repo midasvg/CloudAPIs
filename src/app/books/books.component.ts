@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {IBooksResult, GotService}from '../services/got.service';
 
 @Component({
   selector: 'app-books',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksComponent implements OnInit {
 
-  constructor() { }
+  books : IBooksResult;
+
+  constructor(private _svc : GotService) { }
 
   ngOnInit() {
+    this._svc.getBooks().subscribe(result => this.books = result);
   }
 
 }

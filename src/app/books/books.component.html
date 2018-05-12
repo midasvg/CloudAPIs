@@ -1,3 +1,23 @@
-<p>
-  books works!
-</p>
+<div class="card" *ngIf="books">
+    <div class="card-header">The books of Game of Thrones</div>
+    <div class="card-block">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let book of books">
+                  <td>{{book.Title}}</td>
+                  <td>{{bios.Author}}</td>
+                  <td>{{bios.numberOfPages}}</td>
+                  
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>

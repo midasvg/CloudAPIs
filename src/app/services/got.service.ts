@@ -10,23 +10,22 @@ export class GotService {
   constructor(private http : HttpClient) { }
 
 
-  getBooks():Observable<books.RootObject[]>{
-    return this.http.get<books.RootObject[]>(this.url + '/books')
+  getBooks():Observable<IBooksResult>{
+    return this.http.get<IBooksResult>(this.url + '/books')
   }
 
-  getCharacters():Observable<characters.RootObject[]>{
-    return this.http.get<characters.RootObject[]>(this.url + '/characters')
+  getCharacters():Observable<ICharacResult[]>{
+    return this.http.get<ICharacResult[]>(this.url + '/characters')
   }
 
-  getHouses():Observable<houses.RootObject[]>{
-    return this.http.get<houses.RootObject[]>(this.url + '/houses')
+  getHouses():Observable<IHousesResult[]>{
+    return this.http.get<IHousesResult[]>(this.url + '/houses')
   }
 
 }
 
-export namespace characters{
 
-  export interface RootObject {
+  export interface ICharacResult {
     url: string;
     name: string;
     gender: string;
@@ -45,11 +44,9 @@ export namespace characters{
     playedBy: string[];
   }
 
-}
 
 
-export namespace books{
-  export interface RootObject {
+  export interface IBooksResult {
     url: string;
     name: string;
     isbn: string;
@@ -63,11 +60,10 @@ export namespace books{
     povCharacters: string[];
   }
 
-}
 
-export namespace houses{
 
-  export interface RootObject {
+
+  export interface IHousesResult {
     url: string;
     name: string;
     region: string;
@@ -85,4 +81,3 @@ export namespace houses{
     cadetBranches: string[];
     swornMembers: string[];
   }
-}
