@@ -28,7 +28,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
       { path: 'home', component: HomeComponent},
       { path: 'books', component: BooksComponent},
       { path: 'characters', component: CharactersComponent},
-      { path: 'houses', component: HousesComponent}
+      { path: 'houses', component: HousesComponent},
+      { path: '', component: HomeComponent},
+      { path: "**", component: PageNotFoundComponent}
     ],{ useHash: true }),
     HttpClientModule,
 

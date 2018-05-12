@@ -5,10 +5,24 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class GotService {
 
-  constructor() { }
+  private url = 'https://anapioficeandfire.com/api'
+
+  constructor(private http : HttpClient) { }
+
+
+  getBooks():Observable<books.RootObject[]>{
+    return this.http.get<books.RootObject[]>(this.url + '/books')
+  }
+
+  getCharacters():Observable<characters.RootObject[]>{
+    return this.http.get<characters.RootObject[]>(this.url + '/characters')
+  }
+
+  getHouses():Observable<houses.RootObject[]>{
+    return this.http.get<houses.RootObject[]>(this.url + '/houses')
+  }
 
 }
-
 
 export namespace characters{
 
@@ -29,8 +43,10 @@ export namespace characters{
     povBooks: any[];
     tvSeries: string[];
     playedBy: string[];
+  }
 
 }
+
 
 export namespace books{
   export interface RootObject {
@@ -51,7 +67,7 @@ export namespace books{
 
 export namespace houses{
 
-  interface RootObject {
+  export interface RootObject {
     url: string;
     name: string;
     region: string;
@@ -69,6 +85,4 @@ export namespace houses{
     cadetBranches: string[];
     swornMembers: string[];
   }
-}
-
 }

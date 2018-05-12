@@ -3,11 +3,29 @@
 <div id="Box">
 
 
-<div class="view overlay" id= "Kaart">
+<div class="view overlay" id= "Pic">
   <img src="assets/gotbooks.jpg" class="img-fluid " alt="">
    <div class="mask rgba-black-light">
     <a>
-      
+      <div  [routerLink]="['/books']" class="mask"></div>
+    </a>
+  </div>
+</div>
+
+<div class="view overlay" id= "Pic">
+  <img src="assets/gotcharacters.jpg" class="img-fluid " alt="">
+   <div class="mask rgba-black-light">
+    <a>
+      <div  [routerLink]="['/characters']" class="mask"></div>
+    </a>
+  </div>
+</div>
+
+<div class="view overlay" id= "Pic">
+  <img src="assets/gothouses.jpg" class="img-fluid " alt="">
+   <div class="mask rgba-black-light">
+    <a>
+      <div  [routerLink]="['/houses']" class="mask"></div>
     </a>
   </div>
 </div>
