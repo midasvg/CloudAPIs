@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ICharacResult, GotService}from '../services/got.service';
 
 @Component({
   selector: 'app-characters',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersComponent implements OnInit {
 
-  constructor() { }
+  characters : ICharacResult[];
+
+  constructor(private _svc : GotService) { }
 
   ngOnInit() {
+    this._svc.getCharacters().subscribe(result => this.characters = result);
   }
 
 }

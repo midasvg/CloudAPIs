@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IHousesResult, GotService } from '../services/got.service';
 
 @Component({
   selector: 'app-houses',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HousesComponent implements OnInit {
 
-  constructor() { }
+  houses : IHousesResult[];
+
+  constructor(private _svc : GotService) { }
 
   ngOnInit() {
+    this._svc.getHouses().subscribe(result => this.houses = result);
   }
 
 }

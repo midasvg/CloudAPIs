@@ -22,6 +22,10 @@ export class GotService {
     return this.http.get<IHousesResult[]>(this.url + '/houses')
   }
 
+  getHouse(id:number):Observable<IHousesResult[]>{
+    return this.http.get<IHousesResult[]>(this.url + '/houses/${id}');
+  }
+
 }
 
   export interface ICharacResult {
@@ -46,6 +50,7 @@ export class GotService {
 
 
   export interface IBooksResult {
+    id: number;
     url: string;
     name: string;
     isbn: string;
@@ -61,6 +66,7 @@ export class GotService {
 
 
   export interface IHousesResult {
+    id: number;
     url: string;
     name: string;
     region: string;
