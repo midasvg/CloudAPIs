@@ -10,8 +10,8 @@ export class GotService {
   constructor(private http : HttpClient) { }
 
 
-  getBooks():Observable<IBooksResult>{
-    return this.http.get<IBooksResult>(this.url + '/books')
+  getBooks():Observable<IBooksResult[]>{
+    return this.http.get<IBooksResult[]>(this.url + '/books')
   }
 
   getCharacters():Observable<ICharacResult[]>{
@@ -23,7 +23,6 @@ export class GotService {
   }
 
 }
-
 
   export interface ICharacResult {
     url: string;
@@ -59,8 +58,6 @@ export class GotService {
     characters: string[];
     povCharacters: string[];
   }
-
-
 
 
   export interface IHousesResult {

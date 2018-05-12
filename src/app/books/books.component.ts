@@ -8,7 +8,7 @@ import {IBooksResult, GotService}from '../services/got.service';
 })
 export class BooksComponent implements OnInit {
 
-  books : IBooksResult;
+  books : IBooksResult[];
 
   constructor(private _svc : GotService) { }
 

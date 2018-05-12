@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { GotService } from './services/got.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [GotService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

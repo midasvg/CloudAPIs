@@ -7,17 +7,15 @@
                     <th>Title</th>
                     <th>Author</th>
                     <th>Pages</th>
-                    
                 </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let book of books">
-                  <td>{{book.Title}}</td>
-                  <td>{{bios.Author}}</td>
-                  <td>{{bios.numberOfPages}}</td>
-                  
-              </tr>
-          </tbody>
+                <tr *ngFor="let book of books">
+                    <td>{{book.name}}</td>
+                    <td>{{book.authors}}</td>
+                    <td>{{book.numberOfPages}}</td>
+                </tr>
+            </tbody>
         </table>
     </div>
-  </div>
+</div>
