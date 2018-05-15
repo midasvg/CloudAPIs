@@ -1,15 +1,24 @@
 #Titles{
+    position: absolute;
     width: 500px;
     margin-left: 250px;
-    margin-right: 100px;
+    margin-right: 0px;
     text-align: center;
     float: left;
 }
 #Book{
     width: 800px;
     height: 900px;
+    position: relative;
+    margin-left: 800px;
 }
 #Parent{
     float: left;
     clear: none;
+}
+#Button{
+    float: left;
+    margin-top: 680px;
+    margin-left: 250px;
+    margin-right: 20px;
 }
