@@ -1,4 +1,3 @@
-
 <div id="Parent">
 <div id="Titles" class="card" *ngIf="books">
     <div class="card-header">Click a book to see more information</div>
@@ -7,13 +6,11 @@
             <thead>
                 <tr>
                     <th>Titles</th>
-                    
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let book of books">
                     <td >{{book.name}}</td>
-                   
                 </tr>
             </tbody>
         </table>

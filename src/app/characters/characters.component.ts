@@ -13,7 +13,7 @@ export class CharactersComponent implements OnInit {
   constructor(private _svc : GotService) { }
 
   ngOnInit() {
-    this._svc.getCharacters().subscribe(result => this.characters = result);
+    this._svc.getCharacters(1).subscribe(result => this.characters = result);
   }
 
 }

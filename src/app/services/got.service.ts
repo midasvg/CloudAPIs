@@ -8,28 +8,23 @@ export class GotService {
   private url = 'https://anapioficeandfire.com/api';
   Information: IBooksResult;
 
-
   constructor(private http : HttpClient) { }
 
-
-  getBooks():Observable<IBooksResult[]>{
-    return this.http.get<IBooksResult[]>(this.url + '/books')
+  getBooks(pageId: number):Observable<IBooksResult[]>{
+    return this.http.get<IBooksResult[]>(this.url + `/books?page=${pageId}&pageSize=10`)
   }
 
   getBookInformation(url:string): Observable<IBooksResult>{
     return this.http.get<IBooksResult>(url);
   }
 
-  getCharacters():Observable<ICharacResult[]>{
-    return this.http.get<ICharacResult[]>(this.url + '/characters')
+  getCharacters(pageId: number):Observable<ICharacResult[]>{
+    return this.http.get<ICharacResult[]>(this.url + `/characters?page=${pageId}&pageSize=10`)
   }
 
-  getHouses():Observable<IHousesResult[]>{
-    return this.http.get<IHousesResult[]>(this.url + '/houses')
+  getHouses(pageId: number):Observable<IHousesResult[]>{
+    return this.http.get<IHousesResult[]>(this.url + `/houses?page=${pageId}&pageSize=10`)
   }
-
-  
-
 
 }
 
