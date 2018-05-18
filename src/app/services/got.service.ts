@@ -19,7 +19,7 @@ export class GotService {
   }
 
   getCharacters(pageId: number):Observable<ICharacResult[]>{
-    return this.http.get<ICharacResult[]>(this.url + `/characters?page=${pageId}&pageSize=10`)
+    return this.http.get<ICharacResult[]>(this.url + `/characters?page=${pageId}&pageSize=50`)
   }
 
   getHouses(pageId: number):Observable<IHousesResult[]>{
