@@ -12,6 +12,7 @@ export class BooksComponent implements OnInit {
   pageNumber: number = 1;
   pageOne: boolean = true;
   pageTwo: boolean = false;
+  active:boolean = false;
 
   constructor(private _svc: GotService) { }
 
