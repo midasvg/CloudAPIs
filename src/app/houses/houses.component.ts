@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IHousesResult, GotService } from '../services/got.service';
+import { IHousesResult, ICharacResult, GotService } from '../services/got.service';
 
 @Component({
   selector: 'app-houses',
@@ -8,13 +8,23 @@ import { IHousesResult, GotService } from '../services/got.service';
 })
 export class HousesComponent implements OnInit {
 
-  houses : IHousesResult[];
+  houses: IHousesResult[];
+  character: string;
 
-  constructor(private _svc : GotService) { }
+  characterID: number = 2;
+
+  constructor(private _svc: GotService) { }
 
   ngOnInit() {
-    this._svc.getHouses(1).subscribe(result => {this.houses = result; 
-      this.houses.forEach(s=> { s.id = s.url.slice(41)})});
-  }
-
+    this._svc.getHouses(1).subscribe(result => {this.houses = result;
+      this.houses.forEach(s => {s.id = s.url.slice(41)})
+      this._svc.getCharacter(this.characterID).subscribe(h => {
+        this.character = h[1].name;
+      })});
+        /*
+        if(s.currentLord == ""){
+          s.currentLord = "Unknown";
+        }
+        */
+      }
 }

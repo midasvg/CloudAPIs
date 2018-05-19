@@ -1,15 +1,25 @@
 #Parent{
-    width: 500px;
-    margin: 20px;
-    margin-bottom: 50px;
-    float: left;
+    width: 1800px;
+    margin: auto;
     height: 30rem;
 }
-
 #Body{
     font-weight: bold;
-    
 }
 #Head{
     text-align: center;
+}
+#Text{
+    text-align: center;
+}
+#Boy{
+    width: 500px;
+    float: left;
+    margin: 10px;
+    height: 250;
+}
+#GrandParent{
+    width: 100%;
+    height: 100%;
+    margin-left: 80px;
 }
