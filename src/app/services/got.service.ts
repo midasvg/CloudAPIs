@@ -22,8 +22,8 @@ export class GotService {
     return this.http.get<ICharacResult[]>(this.url + `/characters?page=${pageId}&pageSize=50`)
   }
 
-  getCharacter(characterId: number): Observable<ICharacResult[]>{
-    return this.http.get<ICharacResult[]>(this.url + `/characters/${characterId}`)
+  getCharacter(characterId: number): Observable<ICharacResult>{
+    return this.http.get<ICharacResult>(this.url + `/characters/${characterId}`)
   }
 
   getHouses(pageId: number):Observable<IHousesResult[]>{
@@ -87,4 +87,5 @@ export class GotService {
     ancestralWeapons: string[];
     cadetBranches: string[];
     swornMembers: string[];
+    currentLordString : string;
   }
