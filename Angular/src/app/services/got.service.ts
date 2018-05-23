@@ -11,7 +11,7 @@ export class GotService {
   constructor(private http : HttpClient) { }
 
   getBooks(pageId: number):Observable<IBooksResult[]>{
-    return this.http.get<IBooksResult[]>(this.url + `/books?page=${pageId}&pageSize=10`)
+    return this.http.get<IBooksResult[]>(this.url + `/books?page=${pageId}&pageSize=9`)
   }
 
   getBookInformation(url:string): Observable<IBooksResult>{

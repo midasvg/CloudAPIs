@@ -6,34 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body background="assets/houseswallpaper.jpg">
-    <div id="NavParent">
-        <nav id="Nav">
-            <ul class="pagination pagination-lg">
-              <li class="page-item" >
-                <a (click)="GetPrevious();" class="page-link" mdbWavesEffect aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span class="sr-only ">Previous</span>
-                </a>
-              </li>
-              <li class="page-item" ><a (click)="SetPageNr(1);" class="page-link" mdbWavesEffect>1</a></li>
-              <li class="page-item" ><a (click)="SetPageNr(2);" class="page-link" mdbWavesEffect>2</a></li>
-              <li class="page-item" ><a (click)="SetPageNr(3);" class="page-link" mdbWavesEffect>3</a></li>
-              <li class="page-item" ><a (click)="SetPageNr(4);" class="page-link" mdbWavesEffect>4</a></li>
-              <li class="page-item" ><a (click)="SetPageNr(5);" class="page-link" mdbWavesEffect>5</a></li>
-              <li class="page-item" ><a (click)="SetPageNr(6);" class="page-link" mdbWavesEffect>6</a></li>
-              <li class="page-item" ><a (click)="SetPageNr(7);" class="page-link" mdbWavesEffect>7</a></li>
-              <li class="page-item" ><a (click)="SetPageNr(8);" class="page-link" mdbWavesEffect>8</a></li>
-              <li class="page-item" ><a (click)="SetPageNr(9);" class="page-link" mdbWavesEffect>9</a></li>
-              <li class="page-item" >
-                <a (click)="GetNext();" class="page-link" mdbWavesEffect aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only ">Next</span>
-                </a>
-              </li>
-            </ul>
-        </nav>
-        </div>
+
+
+<body>
+        <div id="NavParent">
+                <nav id="Nav">
+                    <ul class="pagination">
+                      <li class="page-item" >
+                        <a (click)="GetPrevious();" class="page-link" mdbWavesEffect aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                          <span class="sr-only ">Previous</span>
+                        </a>
+                      </li>
+                      <li class="page-item" ><a (click)="SetPageNr(1);" class="page-link" mdbWavesEffect>1</a></li>
+                      <li class="page-item" ><a (click)="SetPageNr(2);" class="page-link" mdbWavesEffect>2</a></li>
+                      <li class="page-item" ><a (click)="SetPageNr(3);" class="page-link" mdbWavesEffect>3</a></li>
+                      <li class="page-item" ><a (click)="SetPageNr(4);" class="page-link" mdbWavesEffect>4</a></li>
+                      <li class="page-item" ><a (click)="SetPageNr(5);" class="page-link" mdbWavesEffect>5</a></li>
+                      <li class="page-item" ><a (click)="SetPageNr(6);" class="page-link" mdbWavesEffect>6</a></li>
+                      <li class="page-item" ><a (click)="SetPageNr(7);" class="page-link" mdbWavesEffect>7</a></li>
+                      <li class="page-item" ><a (click)="SetPageNr(8);" class="page-link" mdbWavesEffect>8</a></li>
+                      <li class="page-item" ><a (click)="SetPageNr(9);" class="page-link" mdbWavesEffect>9</a></li>
+                      <li class="page-item" >
+                        <a (click)="GetNext();" class="page-link" mdbWavesEffect aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                          <span class="sr-only ">Next</span>
+                        </a>
+                      </li>
+                    </ul>
+                </nav>
+                </div>
+   
           
         <div id="GrandParent">
             <div id="Parent" *ngIf="houses">

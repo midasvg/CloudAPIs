@@ -26,10 +26,18 @@
     margin: auto;
 }
 #NavParent{
-    width: 550px;
+    width: 485px;
     margin: auto;
 }
 body{
+    background-image: url("https://www.50-best.com/images/tv_wallpapers/got_houses2_wallpaper.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
+    height: 6200px;
+}
+.pagination li a{
+
+    margin-top: 25px;
+    color: white;
+    font-size: 155%;
 }
