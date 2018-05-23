@@ -27,7 +27,11 @@ export class GotService {
   }
 
   getHouses(pageId: number):Observable<IHousesResult[]>{
-    return this.http.get<IHousesResult[]>(this.url + `/houses?page=${pageId}&pageSize=50`)
+    return this.http.get<IHousesResult[]>(this.url + `/houses?page=${pageId}&pageSize=48`)
+  }
+
+  getHouse(houseId: number): Observable<IHousesResult>{
+    return this.http.get<IHousesResult>(this.url + `/houses/${houseId}`)
   }
 
 }

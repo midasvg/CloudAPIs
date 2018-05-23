@@ -10,9 +10,7 @@ export class BooksComponent implements OnInit {
 
   books: IBooksResult[];
   pageNumber: number = 1;
-  pageOne: boolean = true;
-  pageTwo: boolean = false;
-  active:boolean = false;
+  active: boolean = false;
 
   constructor(private _svc: GotService) { }
 
@@ -21,27 +19,24 @@ export class BooksComponent implements OnInit {
   }
 
   GetNext() {
-    if (this.pageOne == true) {
+    if (this.pageNumber == 1) {
       this.pageNumber++;
-      this.pageTwo = true;
-      this.pageOne = false;
       this._svc.getBooks(this.pageNumber).subscribe(result => this.books = result);
     }
     else {
-      console.log("You are already on the last page.");
+      alert("You are already on the last page.");
     }
   }
 
   GetPrevious() {
-    if (this.pageTwo == true) {
+    if (this.pageNumber == 2) {
       this.pageNumber--;
-      this.pageOne = true;
-      this.pageTwo = false;
       this._svc.getBooks(this.pageNumber).subscribe(result => this.books = result);
     }
     else {
-      console.log("You are already on the first page.");
+      alert("You are already on the first page.");
     }
   }
+
 
 }

@@ -1,0 +1,35 @@
+#Parent{
+    width: 1590px;
+    margin: auto;
+
+    height: 30rem;
+}
+
+#Body{
+    font-weight: bold;
+
+}
+#Head{
+    text-align: center;
+}
+#Boy{
+    width: 500px;
+    float: left;
+
+    margin: 15px;
+}
+#GrandParent{
+    width: 100%;
+    height: 100%;
+}
+#Nav{
+    margin: auto;
+}
+#NavParent{
+    width: 550px;
+    margin: auto;
+}
+body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
