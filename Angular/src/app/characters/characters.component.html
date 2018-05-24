@@ -9,6 +9,14 @@
 </head>
 
 <body>
+    <div id="Input" class="md-form">
+
+        <input mdbInputDirective type="text" [(ngModel)]="searchInput" id="form1" class="form-control">
+        <label for="form1" id="Search">Enter a name (eg. Walder)</label>
+        <button type="button" class="btn btn-elegant waves-light" mdbWavesEffect>Elegant</button>
+
+    </div>
+
     <div id="Parent" *ngIf="characters">
         <div class="Container" *ngFor="let c of characters">
             <div class="card">
@@ -30,6 +38,7 @@
             </div>
         </div>
     </div>
+    
 </body>
 
 </html>

@@ -9,18 +9,38 @@ import { ICharacResult, GotService } from '../services/got.service';
 export class CharactersComponent implements OnInit {
 
   characters: ICharacResult[];
+  searchInput: string;
 
   constructor(private _svc: GotService) { }
 
   ngOnInit() {
+    
+      this._svc.getCharacters(1).subscribe(result => {
+        this.characters = result
+        this.characters.forEach(s => {
+          if (s.name == "") {
+            s.name = "Unknown";
+          }
+        })
+      });
+      
+  
+    /*
     this._svc.getCharacters(1).subscribe(result => {
-      this.characters = result
+      this.characters = result;
       this.characters.forEach(s => {
-        if (s.name == "") {
-          s.name = "Unknown";
-        }
+        this._svc.getCharacter(+(s.name.slice(45))).subscribe(t => {
+          s.name = this.searchInput;
+        })
       })
-    });
+    })
+*/
+
+  }
+
+  Search(searchInput: string) {
+    //this._svc.getCharacter()
+
   }
 
 }
