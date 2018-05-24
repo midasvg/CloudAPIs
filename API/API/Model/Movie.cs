@@ -15,6 +15,8 @@ namespace API.Model
         public double IMDBscore { get; set; }
         public int YearOfRelease { get; set; }
 
+        public Actor Actor { get; set; }
+
         //Could go on and make a director Model/Controller 
         //to go further in-depth.
     }
