@@ -10,15 +10,13 @@
 
 <body>
     <div id="Input" class="md-form">
-
         <input mdbInputDirective type="text" [(ngModel)]="searchInput" id="form1" class="form-control">
         <label for="form1" id="Search">Enter a name (eg. Walder)</label>
         <button type="button" (click)="Search();" class="btn btn-elegant waves-light" mdbWavesEffect>Go</button>
-
     </div>
 
-    <div id="Parent" *ngIf="characters">
-        <div class="Container" *ngFor="let c of characters">
+    <div id="Parent" >
+        <div class="Container" *ngIf="character">
             <div class="card">
                 <div class="card-header">The Characters of Game of Thrones</div>
                 <div class="card-block">
@@ -30,7 +28,20 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{c.name}}</td>
+                                <td id="Body">Name:</td>
+                                <td id="Text">{{character.name}}</td>
+                            </tr>
+                            <tr>
+                                <td id="Body">Born:</td>
+                                <td id="Text">{{character.born}}</td>
+                            </tr>
+                            <tr>
+                                <td id="Body">Died:</td>
+                                <td id="Text">{{character.died}}</td>
+                            </tr>
+                            <tr>
+                                <td id="Body">Gender:</td>
+                                <td id="Text">{{character.gender}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -38,7 +49,6 @@
             </div>
         </div>
     </div>
-    
 </body>
 
 </html>

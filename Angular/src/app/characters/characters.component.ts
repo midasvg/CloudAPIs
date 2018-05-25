@@ -12,32 +12,25 @@ export class CharactersComponent implements OnInit {
   character: ICharacResult;
   searchInput: string;
 
+
   constructor(private _svc: GotService) { }
 
   ngOnInit() {
-    
-      this._svc.getCharacters(1).subscribe(result => {
-        this.characters = result
-        this.characters.forEach(s => {
-          if (s.name == "") {
-            s.name = "Unknown";
-          }
-        })
-      });
-      
-
+    /*
+    this._svc.getCharacters(1).subscribe(result => {
+      this.characters = result
+      this.characters.forEach(s => {
+        if (s.name == "") {
+          s.name = "Unknown";
+        }
+      })
+    });
+    */
   }
 
-  Search(searchInput: string) {
-    this._svc.getCharacter(0).subscribe(result =>{
-      this.character = result
-      if(this.character.name == searchInput){
-        result.name = this.character.name;
-        result.born = this.character.born;
-        result.died = this.character.died;
-      }
+  Search() {
+    this._svc.getCharacterByName(this.searchInput).subscribe(result => {
+      this.character = result;
     })
-
   }
-
 }

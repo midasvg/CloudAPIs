@@ -26,6 +26,10 @@ export class GotService {
     return this.http.get<ICharacResult>(this.url + `/characters/${characterId}`)
   }
 
+  getCharacterByName(characterName: string): Observable<ICharacResult>{
+    return this.http.get<ICharacResult>(this.url + `/characters?name=${characterName}`)
+  }
+
   getHouses(pageId: number):Observable<IHousesResult[]>{
     return this.http.get<IHousesResult[]>(this.url + `/houses?page=${pageId}&pageSize=48`)
   }
