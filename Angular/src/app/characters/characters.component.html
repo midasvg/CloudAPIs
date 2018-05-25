@@ -13,7 +13,7 @@
 
         <input mdbInputDirective type="text" [(ngModel)]="searchInput" id="form1" class="form-control">
         <label for="form1" id="Search">Enter a name (eg. Walder)</label>
-        <button type="button" class="btn btn-elegant waves-light" mdbWavesEffect>Elegant</button>
+        <button type="button" (click)="Search();" class="btn btn-elegant waves-light" mdbWavesEffect>Go</button>
 
     </div>
 

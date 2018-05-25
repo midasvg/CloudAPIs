@@ -9,6 +9,7 @@ import { ICharacResult, GotService } from '../services/got.service';
 export class CharactersComponent implements OnInit {
 
   characters: ICharacResult[];
+  character: ICharacResult;
   searchInput: string;
 
   constructor(private _svc: GotService) { }
@@ -24,22 +25,18 @@ export class CharactersComponent implements OnInit {
         })
       });
       
-  
-    /*
-    this._svc.getCharacters(1).subscribe(result => {
-      this.characters = result;
-      this.characters.forEach(s => {
-        this._svc.getCharacter(+(s.name.slice(45))).subscribe(t => {
-          s.name = this.searchInput;
-        })
-      })
-    })
-*/
 
   }
 
   Search(searchInput: string) {
-    //this._svc.getCharacter()
+    this._svc.getCharacter(0).subscribe(result =>{
+      this.character = result
+      if(this.character.name == searchInput){
+        result.name = this.character.name;
+        result.born = this.character.born;
+        result.died = this.character.died;
+      }
+    })
 
   }
 
