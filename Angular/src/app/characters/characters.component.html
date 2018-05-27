@@ -11,36 +11,31 @@
 <body>
     <div id="Input" class="md-form">
         <input mdbInputDirective type="text" [(ngModel)]="searchInput" id="form1" class="form-control">
-        <label for="form1" id="Search">Enter a name (eg. Walder)</label>
+        <label for="form1" id="Search">Enter a name (eg. Walder, Jaime Lannister, Brandon Stark, ...)</label>
         <button type="button" (click)="Search();" class="btn btn-elegant waves-light" mdbWavesEffect>Go</button>
     </div>
 
     <div id="Parent" >
         <div class="Container" *ngIf="character">
             <div class="card">
-                <div class="card-header">The Characters of Game of Thrones</div>
+                <div id="Char" class="card-header">CHARACTER FOUND</div>
                 <div class="card-block">
                     <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr>
-                                <td id="Body">Name:</td>
+                                <td id="Body">Name</td>
                                 <td id="Text">{{character.name}}</td>
                             </tr>
                             <tr>
-                                <td id="Body">Born:</td>
+                                <td id="Body">Born</td>
                                 <td id="Text">{{character.born}}</td>
                             </tr>
                             <tr>
-                                <td id="Body">Died:</td>
+                                <td id="Body">Died</td>
                                 <td id="Text">{{character.died}}</td>
                             </tr>
                             <tr>
-                                <td id="Body">Gender:</td>
+                                <td id="Body">Gender</td>
                                 <td id="Text">{{character.gender}}</td>
                             </tr>
                         </tbody>

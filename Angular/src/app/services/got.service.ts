@@ -14,8 +14,8 @@ export class GotService {
     return this.http.get<IBooksResult[]>(this.url + `/books?page=${pageId}&pageSize=9`)
   }
 
-  getBookInformation(url:string): Observable<IBooksResult>{
-    return this.http.get<IBooksResult>(url);
+  getBookInformation(bookId:number): Observable<IBooksResult>{
+    return this.http.get<IBooksResult>(this.url + `/books/${bookId}`);
   }
 
   getCharacters(pageId: number):Observable<ICharacResult[]>{
@@ -26,8 +26,8 @@ export class GotService {
     return this.http.get<ICharacResult>(this.url + `/characters/${characterId}`)
   }
 
-  getCharacterByName(characterName: string): Observable<ICharacResult>{
-    return this.http.get<ICharacResult>(this.url + `/characters?name=${characterName}`)
+  getCharacterByName(characterName: string): Observable<ICharacResult[]>{
+    return this.http.get<ICharacResult[]>(this.url + `/characters?name=${characterName}`)
   }
 
   getHouses(pageId: number):Observable<IHousesResult[]>{

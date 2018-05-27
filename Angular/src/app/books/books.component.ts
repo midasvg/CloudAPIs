@@ -9,14 +9,19 @@ import { IBooksResult, GotService } from '../services/got.service';
 export class BooksComponent implements OnInit {
 
   books: IBooksResult[];
+  book: IBooksResult;
   pageNumber: number = 1;
   active: boolean = false;
+  bookID: number = 3;
 
   constructor(private _svc: GotService) { }
 
   ngOnInit() {
-    this._svc.getBooks(this.pageNumber).subscribe(result => this.books = result);
+    this._svc.getBooks(this.pageNumber).subscribe(result => {
+      this.books = result
+    });
   }
+
 
   GetNext() {
     if (this.pageNumber == 1) {
@@ -36,6 +41,19 @@ export class BooksComponent implements OnInit {
     else {
       alert("You are already on the first page.");
     }
+  }
+
+  SetBookID(bookNumber: number) {
+    this.bookID = bookNumber;
+    console.log(this.bookID);
+    this._svc.getBookInformation(this.bookID).subscribe(result => {
+      this.book = result;
+      console.log(this.book.name);
+      console.log(this.book.authors[0]);
+      console.log(this.book.numberOfPages);
+      console.log(this.book.isbn);
+      console.log(this.book.publisher);
+    })
   }
 
 

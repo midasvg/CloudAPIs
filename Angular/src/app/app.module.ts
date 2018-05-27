@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { GotService } from './services/got.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { GotService } from './services/got.service';
       { path: "**", component: PageNotFoundComponent}
     ],{ useHash: true }),
     HttpClientModule,
+    FormsModule
 
   ],
   schemas: [ NO_ERRORS_SCHEMA ],

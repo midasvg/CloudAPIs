@@ -16,7 +16,7 @@ export class CharactersComponent implements OnInit {
   constructor(private _svc: GotService) { }
 
   ngOnInit() {
-    /*
+    
     this._svc.getCharacters(1).subscribe(result => {
       this.characters = result
       this.characters.forEach(s => {
@@ -25,12 +25,19 @@ export class CharactersComponent implements OnInit {
         }
       })
     });
-    */
+    
   }
 
   Search() {
     this._svc.getCharacterByName(this.searchInput).subscribe(result => {
-      this.character = result;
+      this.character = result[0];
+
+      if(this.character.died ==""){
+        this.character.died = "Still alive / Unkown";
+      }
+      if(this.character.born==""){
+        this.character.born = "Date not known";
+      }
     })
   }
 }

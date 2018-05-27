@@ -19,7 +19,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let book of books" >
-                            <td mdbRippleRadius>{{book.name}}</td>
+                            <td (click)="SetBookID(bookID);" mdbRippleRadius>{{book.name}}</td>
                         </tr>
                     </tbody>
                 </table>
