@@ -46,7 +46,7 @@ namespace API.Controllers
                         break;
                 }
             }
-            query = query.Include(n => n.Actor);
+            query = query.Include(n => n.Director);
 
             query = query.Take(length);
             return query.ToList();
@@ -72,7 +72,6 @@ namespace API.Controllers
             orgMovie.Length = updatedMovie.Length;
             orgMovie.IMDBscore = updatedMovie.IMDBscore;
             orgMovie.YearOfRelease = updatedMovie.YearOfRelease;
-            orgMovie.Actor = updatedMovie.Actor;
             context.SaveChanges();
             return Ok(orgMovie);
         }
@@ -81,20 +80,20 @@ namespace API.Controllers
         [HttpGet]
         public IActionResult GetMovie(int id)
         {
-            var movie = context.Movies.Include(n => n.Actor).SingleOrDefault(n => n.ID == id);
+            var movie = context.Movies.Include(n => n.Director).SingleOrDefault(n => n.ID == id);
             if (movie == null)
                 return NotFound();
             return Ok(movie);
         }
 
-        [Route("{id}/actor")]
+        [Route("{id}/Director")]
         [HttpGet]
-        public IActionResult GetActorFromMovie(int id)
+        public IActionResult GetDirectorFromMovie(int id)
         {
-            var movie = context.Movies.Include(n => n.Actor).SingleOrDefault(n => n.ID == id);
+            var movie = context.Movies.Include(n => n.Director).SingleOrDefault(n => n.ID == id);
             if (movie == null)
                 return NotFound();
-            return Ok(movie.Actor);
+            return Ok(movie.Director);
         }
 
         [Route("{id}")]

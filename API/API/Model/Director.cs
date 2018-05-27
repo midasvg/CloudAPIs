@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace API.Model
 {
-    public class Actor
+    public class Director
     {
         public int ID { get; set; }
         public int Age { get; set; }

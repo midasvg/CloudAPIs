@@ -11,13 +11,9 @@ namespace API.Model
         public string Title { get; set; }
         public int Length { get; set; }
         public string Genre { get; set; }
-        public string Director { get; set; }
-        public double IMDBscore { get; set; }
+        public string IMDBscore { get; set; }
         public int YearOfRelease { get; set; }
+        public Director Director { get; set; }
 
-        public Actor Actor { get; set; }
-
-        //Could go on and make a director Model/Controller 
-        //to go further in-depth.
     }
 }
