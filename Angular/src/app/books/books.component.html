@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <div id="Parent">
         <div id="Titles" class="card" *ngIf="books">
@@ -18,15 +20,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let book of books" >
-                            <td (click)="SetBookID(bookID);" mdbRippleRadius>{{book.name}}</td>
+                        <tr *ngFor="let book of books">
+                            <td (click)="SetBookID(book.id);" mdbRippleRadius>{{book.name}}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-    
+
         </div>
-    
+
+
         <nav>
             <ul id="Page" class="pagination">
                 <li class="page-item">
@@ -41,7 +44,7 @@
                     </a>
                 </li>
                 <li class="page-item">
-                    <a (click)="GetNext();"  class="page-link" mdbWavesEffect>2</a>
+                    <a (click)="GetNext();" class="page-link" mdbWavesEffect>2</a>
                 </li>
                 <li class="page-item">
                     <a (click)="GetNext();" class="page-link" mdbWavesEffect aria-label="Next">
@@ -51,13 +54,18 @@
                 </li>
             </ul>
         </nav>
-    
+
         <div class="view overlay" id="Book">
-            <img src="assets/book.jpg" class="img-fluid " alt="">
-            <div>
-    
+            <div class="book-info">
+                <h2>Title</h2>
+                <h2>Author</h2>
+                <h2>Pages</h2>
+                <h2>ISBN</h2>
+                <h2>Publisher</h2>
             </div>
+
         </div>
     </div>
 </body>
+
 </html>

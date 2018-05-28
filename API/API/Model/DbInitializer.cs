@@ -16,7 +16,7 @@ namespace API.Model
                 //Regisseurs toevoegen vooraleer de films zelf
                 var spielberg = new Director()
                 {
-                    Movies = new List<Movie>(),
+                    
                     FirstName = "Steven",
                     LastName = "Spielberg",
                     Age = 71,
@@ -25,7 +25,7 @@ namespace API.Model
 
                 var jackson = new Director()
                 {
-                    Movies = new List<Movie>(),
+                   
                     FirstName = "Peter",
                     LastName = "Jackson",
                     Age = 56,
@@ -34,7 +34,7 @@ namespace API.Model
 
                 var yates = new Director()
                 {
-                    Movies = new List<Movie>(),
+                   
                     FirstName = "David",
                     LastName = "Yates",
                     Age = 54,
@@ -43,7 +43,6 @@ namespace API.Model
 
                 var nolan = new Director()
                 {
-                    Movies = new List<Movie>(),
                     FirstName = "Christopher",
                     LastName = "Nolan",
                     Age = 47,
@@ -98,6 +97,8 @@ namespace API.Model
                     Director = yates
                 };
                 context.Movies.Add(movie);
+
+                context.SaveChanges();
             }
         }
 

@@ -62,7 +62,7 @@ export class GotService {
 
 
   export interface IBooksResult {
-    id: string;
+    id: number;
     url: string;
     name: string;
     isbn: string;

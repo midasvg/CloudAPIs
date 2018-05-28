@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IBooksResult, GotService } from '../services/got.service';
+import { map } from 'rxjs/operators';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-books',
@@ -12,13 +14,20 @@ export class BooksComponent implements OnInit {
   book: IBooksResult;
   pageNumber: number = 1;
   active: boolean = false;
-  bookID: number = 3;
+  bookID: number;
 
   constructor(private _svc: GotService) { }
 
   ngOnInit() {
-    this._svc.getBooks(this.pageNumber).subscribe(result => {
+    var g = 1;
+    this._svc.getBooks(this.pageNumber).pipe(map((element: IBooksResult[]) => 
+    { 
+      element.forEach(e => e.id = g++);
+      return element;
+    } )).subscribe(result => {
+      //console.log(this.books);
       this.books = result
+      console.log(this.books);
     });
   }
 
@@ -26,7 +35,16 @@ export class BooksComponent implements OnInit {
   GetNext() {
     if (this.pageNumber == 1) {
       this.pageNumber++;
-      this._svc.getBooks(this.pageNumber).subscribe(result => this.books = result);
+      var g = 10;
+      this._svc.getBooks(this.pageNumber).pipe(map((element: IBooksResult[]) => 
+      { 
+        element.forEach(e => e.id = g++);
+        return element;
+      } )).subscribe(result => {
+        //console.log(this.books);
+        this.books = result
+        console.log(this.books);
+      });
     }
     else {
       alert("You are already on the last page.");
@@ -36,8 +54,17 @@ export class BooksComponent implements OnInit {
   GetPrevious() {
     if (this.pageNumber == 2) {
       this.pageNumber--;
-      this._svc.getBooks(this.pageNumber).subscribe(result => this.books = result);
-    }
+      var g = 1;
+    this._svc.getBooks(this.pageNumber).pipe(map((element: IBooksResult[]) => 
+    { 
+      element.forEach(e => e.id = g++);
+      return element;
+    } )).subscribe(result => {
+      //console.log(this.books);
+      this.books = result
+      console.log(this.books);
+    });
+  }
     else {
       alert("You are already on the first page.");
     }

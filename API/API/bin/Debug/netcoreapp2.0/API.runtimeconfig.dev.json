@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\MIDASVG\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\MIDASVG\\.nuget\\packages",
+      "C:\\Users\\Midasvg\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Midasvg\\.nuget\\packages",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }

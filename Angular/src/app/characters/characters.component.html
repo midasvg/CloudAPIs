@@ -10,7 +10,7 @@
 
 <body>
     <div id="Input" class="md-form">
-        <input mdbInputDirective type="text" [(ngModel)]="searchInput" id="form1" class="form-control">
+        <input mdbInputDirective [mdbValidate]="false" type="text" [(ngModel)]="searchInput" id="form1" class="form-control">
         <label for="form1" id="Search">Enter a name (eg. Walder, Jaime Lannister, Brandon Stark, ...)</label>
         <button type="button" (click)="Search();" class="btn btn-elegant waves-light" mdbWavesEffect>Go</button>
     </div>
