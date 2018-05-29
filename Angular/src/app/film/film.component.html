@@ -1,0 +1,17 @@
+
+<div class="card" *ngIf="movies">
+
+  <!--Card image-->
+  <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(97).jpg" alt="Card image cap">
+
+  <!--Card content-->
+  <div class="card-body" *ngFor="let m of movies">
+      <!--Title-->
+      <h4 class="card-title">{{m.title}}</h4>
+      <!--Text-->
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
+  </div>
+
+</div>
+          

@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { GotService } from './services/got.service';
 import { FormsModule } from '@angular/forms';
+import { FilmComponent } from './film/film.component';
+import { MovieService } from './services/movie.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     CharactersComponent,
     HousesComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FilmComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { FormsModule } from '@angular/forms';
       { path: 'books', component: BooksComponent},
       { path: 'characters', component: CharactersComponent},
       { path: 'houses', component: HousesComponent},
+      { path: 'ownapi', component: FilmComponent},
       { path: '', component: HomeComponent},
       { path: "**", component: PageNotFoundComponent}
     ],{ useHash: true }),
@@ -39,7 +43,7 @@ import { FormsModule } from '@angular/forms';
 
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [GotService],
+  providers: [GotService, MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

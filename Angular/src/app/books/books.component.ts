@@ -75,11 +75,6 @@ export class BooksComponent implements OnInit {
     console.log(this.bookID);
     this._svc.getBookInformation(this.bookID).subscribe(result => {
       this.book = result;
-      console.log(this.book.name);
-      console.log(this.book.authors[0]);
-      console.log(this.book.numberOfPages);
-      console.log(this.book.isbn);
-      console.log(this.book.publisher);
     })
   }
 

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Movies")]
+    [Route("api/movies")]
     public class MoviesController : Controller
     {
         private readonly LibraryContext context;
@@ -20,7 +20,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public List<Movie> GetMovies(string Genre, string Title, int Length, string Director, string sorting, int length, string direction = "ascending")
+        public List<Movie> GetMovies(string Genre, string Title, int? page, string sorting, int length = 4, string direction = "ascending")
         {
             IQueryable<Movie> query = context.Movies;
 
@@ -40,15 +40,17 @@ namespace API.Controllers
                         break;
                     case "Length":
                         if (direction == "asc")
-                            query = query.OrderBy(n => n.Length);
+                            query = query.OrderBy(n => n.Genre);
                         else if (direction == "desc")
-                            query = query.OrderByDescending(n => n.Length);
+                            query = query.OrderByDescending(n => n.Genre);
                         break;
                 }
             }
-            query = query.Include(n => n.Director);
-
+            query = query.Include(d => d.Director);
+            if (page.HasValue)
+                query = query.Skip(page.Value * length);
             query = query.Take(length);
+
             return query.ToList();
         }
 
@@ -72,6 +74,7 @@ namespace API.Controllers
             orgMovie.Length = updatedMovie.Length;
             orgMovie.IMDBscore = updatedMovie.IMDBscore;
             orgMovie.YearOfRelease = updatedMovie.YearOfRelease;
+            orgMovie.Poster = updatedMovie.Poster;
             context.SaveChanges();
             return Ok(orgMovie);
         }

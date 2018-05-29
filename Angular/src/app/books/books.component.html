@@ -27,10 +27,20 @@
                 </table>
             </div>
 
+            <div class="view overlay" id="Book" >
+                <div class="book-info" *ngIf="book">
+                    <h2 id="Element">Title: {{book.name}}</h2>
+                    <h2 id="Element">Author: {{book.authors[0]}}</h2>
+                    <h2 id="Element">Pages: {{book.numberOfPages}}</h2>
+                    <h2 id="Element">ISBN: {{book.isbn}}</h2>
+                    <h2 id="Element">Publisher: {{book.publisher}}</h2>
+                </div>
+
+            </div>
         </div>
+    </div>
 
-
-        <nav>
+    <nav>
             <ul id="Page" class="pagination">
                 <li class="page-item">
                     <a (click)="GetPrevious();" class="page-link" mdbWavesEffect aria-label="Previous">
@@ -54,18 +64,6 @@
                 </li>
             </ul>
         </nav>
-
-        <div class="view overlay" id="Book">
-            <div class="book-info">
-                <h2>Title</h2>
-                <h2>Author</h2>
-                <h2>Pages</h2>
-                <h2>ISBN</h2>
-                <h2>Publisher</h2>
-            </div>
-
-        </div>
-    </div>
 </body>
 
 </html>

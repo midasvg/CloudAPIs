@@ -60,6 +60,7 @@ namespace API.Model
                     Genre = "Superhero",
                     IMDBscore = "9/10",
                     YearOfRelease = 2008,
+                    Poster = "https://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
                     Director = nolan
                 };
                 context.Movies.Add(movie);
@@ -72,6 +73,7 @@ namespace API.Model
                     Genre = "Action",
                     IMDBscore = "7.2/10",
                     YearOfRelease = 2005,
+                    Poster = "https://ia.media-imdb.com/images/M/MV5BMjYxYmRlZWYtMzAwNC00MDA1LWJjNTItOTBjMzlhNGMzYzk3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
                     Director = jackson
                 };
                 context.Movies.Add(movie);
@@ -83,6 +85,7 @@ namespace API.Model
                     Genre = "War",
                     IMDBscore = "8.6/10",
                     YearOfRelease = 1998,
+                    Poster = "https://ia.media-imdb.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SY1000_CR0,0,679,1000_AL_.jpg",
                     Director = spielberg
                 };
                 context.Movies.Add(movie);
@@ -94,6 +97,7 @@ namespace API.Model
                     Genre = "Adventure",
                     IMDBscore = "7.5/10",
                     YearOfRelease = 2007,
+                    Poster = "https://ia.media-imdb.com/images/M/MV5BMTM0NTczMTUzOV5BMl5BanBnXkFtZTYwMzIxNTg3._V1_.jpg",
                     Director = yates
                 };
                 context.Movies.Add(movie);

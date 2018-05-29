@@ -1,32 +1,39 @@
 <!--Navbar-->
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark black">
-  
+
     <!-- Navbar brand -->
-    <logo><a class="navbar-brand" href="#">Game of Thrones</a></logo>
-    
+    <logo>
+        <a class="navbar-brand" href="#">Game of Thrones</a>
+    </logo>
+
     <!-- Collapsible content -->
     <links>
-    
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item" [routerLinkActive]="['active']">
-                    <a id="item" [routerLink]="['/home']" class="nav-link waves-light" mdbRippleRadius>Home<span class="sr-only">(current)</span></a>
-                </li>
-       <li class="nav-item" [routerLinkActive]="['active']">
-           <a id="item" [routerLink]="['/books']" class="nav-link waves-light" mdbRippleRadius>Books</a>
-       </li>
-       <li class="nav-item" [routerLinkActive]="['active']">
-           <a id="item" [routerLink]="['/characters']" class="nav-link waves-light" mdbRippleRadius>Characters</a>
-       </li>
-       <li class="nav-item" [routerLinkActive]="['active']">
-           <a id="item" [routerLink]="['/houses']" class="nav-link waves-light" mdbRippleRadius>Houses</a>
-       </li>
-    
-    </ul>
-    <!-- Links -->
-    
+                <a id="item" [routerLink]="['/home']" class="nav-link waves-light" mdbRippleRadius>Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a id="item" [routerLink]="['/books']" class="nav-link waves-light" mdbRippleRadius>Books</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a id="item" [routerLink]="['/characters']" class="nav-link waves-light" mdbRippleRadius>Characters</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+                <a id="item" [routerLink]="['/houses']" class="nav-link waves-light" mdbRippleRadius>Houses</a>
+            </li>
+            <li id="api" class="nav-item" [routerLinkActive]="['active']">
+                <a id="item" [routerLink]="['/ownapi']" class="nav-link waves-light" mdbRippleRadius>Directors & Movies</a>
+            </li>
+
+        </ul>
+        <!-- Links -->
+
     </links>
     <!-- Collapsible content -->
-    
-    </mdb-navbar>
-    <!--/.Navbar-->
+
+</mdb-navbar>
+<!--/.Navbar-->
