@@ -1,17 +1,49 @@
+<div id="buttons">
+  <button id="buttonMovies" (click)="GetMovies(); "type="button" class="btn btn-outline-danger" mdbWavesEffect>Get Movies</button>
+  <button id="buttonMovies" (click)="GetDirectors();" type="button" class="btn btn-outline-danger" mdbWavesEffect>Get Directors</button>
+</div>
 
-<div class="card" *ngIf="movies">
+<div class="movies" *ngIf="movies">
+  <div class="card" *ngFor="let m of movies">
 
-  <!--Card image-->
-  <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(97).jpg" alt="Card image cap">
+    <!--Card image-->
+    <img class="img-fluid" src={{m.poster}} alt="Card image cap">
 
-  <!--Card content-->
-  <div class="card-body" *ngFor="let m of movies">
+    <!--Card content-->
+    <div class="card-body">
       <!--Title-->
       <h4 class="card-title">{{m.title}}</h4>
       <!--Text-->
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
+      <p class="card-text">This is a(n) {{m.genre}} movie, directed by {{m.director.firstName}} {{m.director.lastName}}. The movie is {{m.length}}
+        minutes long and was released in the year {{m.yearOfRelease}}. It was well received by the public, as it gained an
+        IMDB score of {{m.imdBscore}}
+      </p>
+    </div>
   </div>
-
 </div>
+
+<div id="direc" class="directors">
+    <div class="card" *ngIf="directors">
+      <div class="card-header">Movie directors in the database.</div>
+        <!--Card content-->
+      <div class="card-block">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+                <th>ID</th>
+                <th>Voornaam</th>
+                <th>Naam</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let d of directors">
+              <td>{{d.id}}</td>
+              <td>{{d.firstName}}</td>
+              <td>{{d.lastName}}</td>
+            </tr>
+          </tbody>
+        </table>
           
+      </div>
+</div>

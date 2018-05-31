@@ -1,3 +1,30 @@
 .card{
     width: 300px;
+    margin: 15px;
+    float: left;
+    position: relative;
+}
+.card-title{
+    text-align: center;
+}
+.movies{
+    margin-top: 65px;
+    float: left;
+    width: 50%;
+}
+.directors{
+    margin-top: 65px;
+    float: left;
+    position: relative;
+}
+#buttons{
+    position: absolute;
+    margin:auto;
+}
+#buttonMovies{
+    margin: 15px;
+    width: 630px;
+}
+#direc{
+    width: 300px;
 }

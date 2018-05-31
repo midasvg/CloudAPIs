@@ -23,7 +23,16 @@ export class MovieService{
     }
 
     getDirector():Observable<IDirectorResult[]>{
-        return this.http.get<IDirectorResult[]>(this.url + `/directors`)
+        return this.http.get<IDirectorResult[]>(this.url + `/directors/`)
+    }
+
+
+    updateMovie(updateMovie:IMovieResult): Observable<IMovieResult>{
+        return this.http.put<IMovieResult>(this.url +  `/movies/`, updateMovie, this.httpOptions);
+    }
+
+    addDirector(newDirector:INewDirector):Observable<INewDirector>{
+        return this.http.post<INewDirector>(this.url + `/directors/`, newDirector, this.httpOptions);
     }
 }
 
@@ -45,5 +54,11 @@ export interface IDirectorResult{
     age: number;
     lastName: string;
     firstName: string;
+}
 
+export interface INewDirector{
+    id: number;
+    age: number;
+    lastName: string;
+    firstName: string;
 }
