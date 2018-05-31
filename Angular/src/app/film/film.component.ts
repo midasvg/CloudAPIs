@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService, IMovieResult, IDirectorResult } from '../services/movie.service';
+import { MovieService, IMovieResult, IDirectorResult, INewDirector } from '../services/movie.service';
 
 @Component({
   selector: 'app-film',
@@ -11,6 +11,7 @@ export class FilmComponent implements OnInit {
   movies: IMovieResult[];
   directors: IDirectorResult[];
 
+  /*
   newFirstName;
   newLastName;
 
@@ -20,6 +21,7 @@ export class FilmComponent implements OnInit {
   updateMovieScore;
   updateMovieGenre;
   updateMovieRelease;
+  */
 
   constructor(private svc: MovieService) { }
 
@@ -37,8 +39,15 @@ export class FilmComponent implements OnInit {
     this.svc.getDirector().subscribe(result => {
       this.directors = result;
     })
-
-
+  }
+/*
+  addDirector(){
+    var newDirector: INewDirector = {id: 5, age: 75, firstName: "Martin", lastName:"Scorcese"};
+    this.svc.addDirector(newDirector).subscribe();
   }
 
+  UpdateMovie(){
+
+  }
+*/
 }
