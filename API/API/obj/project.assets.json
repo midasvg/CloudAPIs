@@ -13125,23 +13125,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Midasvg\\.nuget\\packages\\": {},
+    "C:\\Users\\MIDASVG\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Midasvg\\Desktop\\CloudAPIs\\API\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\MIDASVG\\Desktop\\Cloud\\CloudAPIs\\API\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\Midasvg\\Desktop\\CloudAPIs\\API\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\Midasvg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Midasvg\\Desktop\\CloudAPIs\\API\\API\\obj\\",
+      "projectPath": "C:\\Users\\MIDASVG\\Desktop\\Cloud\\CloudAPIs\\API\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\MIDASVG\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MIDASVG\\Desktop\\Cloud\\CloudAPIs\\API\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Midasvg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MIDASVG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
