@@ -11,9 +11,11 @@ export class FilmComponent implements OnInit {
   movies: IMovieResult[];
   directors: IDirectorResult[];
 
-  /*
+  
   newFirstName;
   newLastName;
+  newID;
+  newAge;
 
   updateMovieID;
   updateMovieTitle;
@@ -21,7 +23,7 @@ export class FilmComponent implements OnInit {
   updateMovieScore;
   updateMovieGenre;
   updateMovieRelease;
-  */
+  
 
   constructor(private svc: MovieService) { }
 
@@ -40,7 +42,7 @@ export class FilmComponent implements OnInit {
       this.directors = result;
     })
   }
-/*
+
   addDirector(){
     var newDirector: INewDirector = {id: 5, age: 75, firstName: "Martin", lastName:"Scorcese"};
     this.svc.addDirector(newDirector).subscribe();
@@ -49,5 +51,4 @@ export class FilmComponent implements OnInit {
   UpdateMovie(){
 
   }
-*/
 }

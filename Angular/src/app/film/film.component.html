@@ -49,3 +49,66 @@
 
   </div>
 </div>
+
+<!--Card content-->
+<div class="newDir">
+<form>
+  <div class="card-body">
+    <!--Title-->
+    <div style="text-align: center">
+      <h4 class="card-title">Add Director</h4>
+    </div>
+    <!--Text-->
+    <div class="md-form ">
+      <input type="text" name="newTitle" [(ngModel)]="newID" id="form2" class="form-control" placeholder="ID">
+    </div>
+
+    <div class="md-form ">
+      <input type="text" name="newFirstName" [(ngModel)]="newFirstName" id="form2" class="form-control" placeholder="First Name">
+    </div>
+
+    <div class="md-form ">
+      <input type="text" name="newLastName" [(ngModel)]="newLastName" id="form2" class="form-control" placeholder="Last Name">
+    </div>
+
+    <div class="md-form ">
+      <input type="text" name="newAge" [(ngModel)]="newAge" id="form2" class="form-control" placeholder="Age">
+    </div>
+
+    <div style="text-align: center">
+      <button type="button" class="btn btn-outline-danger" (click)="addDirector()" mdbWavesEffect>Add</button>
+    </div>
+  </div>
+</form>
+</div>
+
+<div class="updateMovie">
+  <form>
+    <div class="card-body">
+      <!--Title-->
+      <div style="text-align: center">
+        <h4 class="card-title">Update Movie</h4>
+      </div>
+      <!--Text-->
+      <div class="md-form ">
+        <input type="text" name="newTitle" [(ngModel)]="newID" id="form2" class="form-control" placeholder="Title">
+      </div>
+  
+      <div class="md-form ">
+        <input type="text" name="newFirstName" [(ngModel)]="newFirstName" id="form2" class="form-control" placeholder="Length">
+      </div>
+  
+      <div class="md-form ">
+        <input type="text" name="newLastName" [(ngModel)]="newLastName" id="form2" class="form-control" placeholder="Genre">
+      </div>
+  
+      <div class="md-form ">
+        <input type="text" name="newAge" [(ngModel)]="newAge" id="form2" class="form-control" placeholder="IMDB Score">
+      </div>
+  
+      <div style="text-align: center">
+        <button type="button" class="btn btn-outline-danger" (click)="addDirector()" mdbWavesEffect>Update</button>
+      </div>
+    </div>
+  </form>
+</div>
